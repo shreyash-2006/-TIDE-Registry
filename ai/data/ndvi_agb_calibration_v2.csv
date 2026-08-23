@@ -1,0 +1,372 @@
+source,plot_id,ndvi,agb_t_per_ha,citation
+nasa_simard_raster,MNG-001,0.6327023506164551,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.429761,108.9866,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.490214,125.7947,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6647748947143555,0.4575078785419464,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.187093,23.6836,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.28081,51.5582,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.330297,49.3154,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.40378,77.3978,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7002294063568115,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.179466,17.8014,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.294965,33.581,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.509231,105.4657,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.362484,63.27,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.337225,42.7777,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.176342,26.8124,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.428738,83.8212,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.501358,94.9363,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.278618,43.6891,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7185430526733398,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.527275,106.2729,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.540193,161.1956,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.624804,145.2579,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.374393,47.0296,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.598937,131.388,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.365589,73.3289,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.629907,181.6725,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.468089,108.8255,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.40893,83.8313,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.469273,91.993,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.3524976372718811,1.8385502099990845,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.382743,59.1625,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.306974,33.7792,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.63587,200.0,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7417662739753723,29.691303253173828,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.32595,47.921,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.530932,141.7608,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.381769,71.3509,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.392075,58.7111,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.382573,70.446,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.366015,48.3744,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.387126,66.1824,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.371236,71.0485,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.437275,93.2395,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.492047,87.2884,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.574582,144.8733,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.231541,24.7078,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.410709,93.8057,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.525229,130.7411,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.389317,69.7289,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.355351,45.6063,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6837725639343262,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.462097,153.0122,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.486169,108.5531,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.356484,68.2748,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.564622,175.6204,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6706798672676086,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.16341,23.5622,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.393162,75.4053,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.587649405002594,1.8385502099990845,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.366619,49.8614,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.571695,137.5416,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.383715271949768,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.449471,103.5528,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.243962,29.4852,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.170159,18.8636,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.462084,76.9249,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.386827,50.2082,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7321906685829163,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.544954,115.9342,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.179882,26.4618,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.640753,133.7824,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.424352,86.8768,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7149809002876282,119.31805419921876,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.498197,110.6098,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.5428925156593323,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.193578,27.366,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.375333,64.783,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.548859,104.3222,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6445021033287048,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.330993,42.4129,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.194767,27.0247,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.597399,200.0,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.256232,37.4606,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.636687,148.9618,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.526293,161.3672,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.5765969753265381,46.46207427978516,Simard et al. 2019 / NASA ORNL DAAC
+nasa_simard_raster,MNG-001,0.2999349236488342,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.592475,200.0,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.529815,117.637,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.598829,159.6278,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7160314321517944,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.618848,200.0,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.312188,46.3156,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.5377777814865112,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.441787,79.7467,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.310395,44.2592,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.237635,41.0898,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.160075,15.9657,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.295283,46.0483,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.356344,40.4816,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.52833,115.2152,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6376068592071533,29.691303253173828,Simard et al. 2019 / NASA ORNL DAAC
+nasa_simard_raster,MNG-001,0.7319698333740234,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.346283,53.761,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.355418,50.7171,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6958667635917664,66.98716735839844,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.361224,55.5467,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.5309923887252808,1.8385502099990845,Simard et al. 2019 / NASA ORNL DAAC
+nasa_simard_raster,MNG-001,0.3000000119209289,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+nasa_simard_raster,MNG-001,0.5282899141311646,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.363473,67.9152,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.589045,200.0,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.170711,29.1467,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.321295,41.9343,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7381694316864014,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.389547,75.2106,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.393852,53.1079,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.420999,41.6988,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.494691,98.4965,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.316143,35.7159,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.631044,200.0,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.600038,156.8739,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6423089504241943,1.8385502099990845,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.506202,98.9564,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.393357,86.3023,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.643871,200.0,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.531805,76.8841,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.565067,169.4163,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.5604494214057922,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.626291,181.6519,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6609442234039307,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.435934,80.7659,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.357458,53.8685,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.445397,99.7845,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.477765,93.1079,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.393169,62.3365,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.235206,35.1455,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.43437,51.3214,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.363156,39.6247,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.516559,99.2352,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.473771,134.1437,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.403032,60.7371,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.402392,62.1484,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.612369,178.0566,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.524335,141.0183,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.311061,63.7641,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6513331532478333,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+nasa_simard_raster,MNG-001,0.6254721879959106,1.8385502099990845,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.340355,34.7758,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.253589,31.027,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.302241,40.5622,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.298089,39.3303,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.2789400219917297,1.8385502099990845,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.373261,56.5701,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.32436,29.2816,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.435416,72.3376,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.278117,30.665,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6534594893455505,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.523766,121.4184,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.374819,66.336,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.258352,33.2617,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.553298,196.4879,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.565839,107.931,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.431672,119.2984,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.295985,39.984,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7068260312080383,1.8385502099990845,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.363043,56.5401,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.23912,29.5358,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.497212,114.0068,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.52137,112.6298,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.399382,42.7577,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.516456,125.7103,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.174717366695404,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.479628,110.0806,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7432198524475098,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.628269,190.5295,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.409933,72.7469,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7297466397285461,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.605339,169.6727,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.419064,60.0633,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.610247,200.0,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.637568,165.0723,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.577556,200.0,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.631348,193.627,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.454061,89.4547,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.521518,129.069,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6753208041191101,29.691303253173828,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.219909,30.1588,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.580594,115.3888,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.568098,167.1715,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.302792,39.8769,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.372527,52.7307,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.5708916783332825,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+nasa_simard_raster,MNG-001,0.127485379576683,1.8385502099990845,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.574037,128.3741,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7051206827163696,29.691303253173828,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.250545,48.1714,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.302916,42.6851,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.444779,89.2379,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.277555,28.1055,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.583625,149.63,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.40445,62.7826,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.4644284546375274,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.627453,171.4086,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.591237,184.9199,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.548498,123.9489,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.528813,108.2456,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.418897,61.5939,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.474879,99.6734,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.364776,67.0941,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.22494,41.5998,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.380502,88.768,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.4588845670223236,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.573804,171.762,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.641548,200.0,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.257346,36.1473,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.214718,30.029,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.547827,143.9907,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7495538592338562,29.691303253173828,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.618034,139.6021,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.26524,28.4374,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6902944445610046,0.4575078785419464,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.480529,134.2039,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.445142,99.1104,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.5277857780456543,66.98716735839844,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.448958,80.2568,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6293995976448059,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.594971,194.3675,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.382322,71.1511,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.310154,43.7165,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.42679,67.2488,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.177141,20.1289,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.481673,98.1225,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.507126,76.6023,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.252616,28.1516,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.484808,120.0402,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.369968,49.6312,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.384647,51.4584,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.379734,62.0287,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.430093,75.906,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.527343,121.0069,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.202189,25.3038,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.4431,93.8011,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.303733,45.0977,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.280004,40.5378,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.627443,200.0,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.422291,80.3265,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.501899,126.3532,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.627536,161.3359,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.221844,22.454,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.542745,133.1456,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.583221,175.0136,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.474742,108.7394,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.151693,21.2639,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.475734,73.3429,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.182143,31.4059,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.199354,31.4972,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.185032,29.6982,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.5495880246162415,46.46207427978516,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.620796,200.0,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.155224,17.1764,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7026836276054382,1.8385502099990845,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.504517,89.0274,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.235284,25.1518,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7168046832084656,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.462255,88.3397,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.584821,171.6063,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.255551,39.3347,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.581604,155.2864,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.622574,162.2655,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.171661,24.9537,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.330795,58.5548,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.551672,200.0,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.585429,194.5725,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6525142788887024,46.46207427978516,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.307101,42.9249,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.558279,151.8484,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.597888,128.9919,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.157088,30.4512,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.356841,57.3,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7382606267929077,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.419792,82.4189,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.617238,200.0,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.610322,188.3969,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.381021,52.9933,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.329028,45.6127,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.630813,200.0,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.424816,100.9349,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.39966,102.6667,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.341516,68.9148,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6780568361282349,1.8385502099990845,Simard et al. 2019 / NASA ORNL DAAC
+nasa_simard_raster,MNG-001,0.7340112328529358,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.164678,17.9372,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.182153,16.7802,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6464821100234985,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.505658,71.7791,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.202265,16.829,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.396084,55.7433,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.516211,117.2667,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6899467706680298,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.63987,200.0,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7439361214637756,1.8385502099990845,Simard et al. 2019 / NASA ORNL DAAC
+nasa_simard_raster,MNG-001,0.7380812168121338,29.691303253173828,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.401178,86.0948,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.486733,139.5716,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.34142,36.4254,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.185487,33.3102,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.216315,27.9246,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.259412,55.9402,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6675134301185608,46.46207427978516,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.378917,74.2588,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.325062,50.0334,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.599334,151.7257,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.243469,35.0683,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.329568,55.2575,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.443097,81.2492,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.392102,62.5222,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.257998,28.4158,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.647713,187.3502,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.219348,36.7833,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.583843,102.1233,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.617503,194.2004,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.38655,74.5513,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.554214,106.0385,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.5790112018585205,1.8385502099990845,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.612501,196.48,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.395985,73.0997,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.37834,85.8151,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.3075459599494934,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+nasa_simard_raster,MNG-001,0.7158193588256836,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.500222,101.0405,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7370812296867371,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+nasa_simard_raster,MNG-001,0.7124541997909546,91.2711944580078,Simard et al. 2019 / NASA ORNL DAAC
+nasa_simard_raster,MNG-001,0.6779271960258484,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.32801,38.5951,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.203806,18.9833,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.233217,27.5024,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.545579,97.8048,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.347478,56.8461,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7307575941085815,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.339235,39.1558,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.524318,132.0517,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.606984,175.1135,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.188404,18.0613,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.559912,184.153,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.195979,18.5285,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.603072,197.218,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.5690468549728394,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.461277,103.52,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.590608,197.4539,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.335096,54.3303,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.591308,131.6747,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6453900933265686,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.381583,43.0438,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7416267991065979,91.2711944580078,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.495997,102.1179,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.620781,200.0,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.277323,30.2973,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.217527,42.3586,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.421023,63.0267,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6994413137435913,7.388433456420898,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.496575,135.4685,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.251985,36.6618,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.6455564498901367,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.304057,69.8355,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.538193,156.5024,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.250445,27.0657,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.250942,48.008,Pham et al. 2019 / Saenger & Snedaker 1993
+literature_anchored_synthetic,MNG-001,0.440285,68.8397,Pham et al. 2019 / Saenger & Snedaker 1993
+nasa_simard_raster,MNG-001,0.7139534950256348,16.66919708251953,Simard et al. 2019 / NASA ORNL DAAC
+literature_anchored_synthetic,MNG-001,0.354181,57.3827,Pham et al. 2019 / Saenger & Snedaker 1993

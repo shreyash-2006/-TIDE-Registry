@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIDE — Trusted Intelligent Digital Ecosystem Registry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ── Modern Design System & CSS Variables ──────────────────────── */
+        :root {
+            --bg-primary: #0a0d14;
+            --bg-secondary: #111726;
+            --bg-card: rgba(18, 26, 43, 0.75);
+            --bg-card-hover: rgba(26, 37, 60, 0.85);
+            --bg-glass: rgba(18, 26, 43, 0.6);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-focus: #00d2ff;
+            
+            --text-primary: #f0f6fc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            
+            --accent-cyan: #00f2fe;
+            --accent-blue: #4facfe;
+            --accent-green: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --accent-teal: #14b8a6;
+            
+            --gradient-ocean: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+            --gradient-emerald: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --gradient-amber: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            --gradient-crimson: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+            --gradient-purple: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+            --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+            
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+            --shadow-glow-cyan: 0 0 24px rgba(0, 242, 254, 0.25);
+            --shadow-glow-green: 0 0 24px rgba(16, 185, 129, 0.25);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(79, 172, 254, 0.06) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.04) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* ── Top Navigation Bar ────────────────────────────────────────── */
+        .navbar {
+            background: rgba(10, 13, 20, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .brand-logo {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: var(--gradient-ocean);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: var(--shadow-glow-cyan);
+        }
+        
+        .brand-text h1 {
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+            background: var(--gradient-ocean);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .brand-text p {
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 0.2px;
+        }
+
+        .nav-roles {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 4px;
+            border-radius: 12px;
+        }
+
+        .nav-tab {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 7px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-tab:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-tab.active {
+            background: var(--gradient-ocean);
+            color: #06111e;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0, 242, 254, 0.3);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .role-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .status-dot.green { background: var(--accent-green); box-shadow: 0 0 8px var(--accent-green); }
+        .status-dot.red { background: var(--accent-red); box-shadow: 0 0 8px var(--accent-red); }
+        .status-dot.amber { background: var(--accent-amber); box-shadow: 0 0 8px var(--accent-amber); }
+
+        /* ── Layout & View Management ──────────────────────────────────── */
+        .main-container {
+            flex: 1;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .view-section {
+            display: none;
+            animation: fadeIn 0.25s ease forwards;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Portal Selector (Landing / Login Hub) ──────────────────────── */
+        .hero-banner {
+            text-align: center;
+            padding: 32px 16px 40px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            background: rgba(0, 242, 254, 0.1);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(0, 242, 254, 0.25);
+            margin-bottom: 16px;
+        }
+
+        .hero-title {
+            font-size: 38px;
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .hero-title span {
+            background: var(--gradient-ocean);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .portal-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 28px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+        }
+
+        .portal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--card-accent, var(--gradient-ocean));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portal-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.18);
+            background: var(--bg-card-hover);
+            box-shadow: var(--shadow-md);
+        }
+
+        .portal-card:hover::before {
+            opacity: 1;
+        }
+
+        .portal-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .portal-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .portal-card p {
+            font-size: 13.5px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .portal-features {
+            list-style: none;
+            margin-bottom: 24px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 14px;
+        }
+
+        .portal-features li {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .portal-features li::before {
+            content: '✓';
+            color: var(--accent-cyan);
+            font-weight: bold;
+        }
+
+        /* ── Common Dashboard UI Components ────────────────────────────── */
+        .dash-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .dash-title-group h2 {
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dash-title-group p {
+            font-size: 13.5px;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .kpi-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 18px 20px;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .kpi-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .kpi-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .kpi-sub {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 22px;
+            backdrop-filter: blur(10px);
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 14px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .panel-header h3 {
+            font-size: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ── Tables ────────────────────────────────────────────────────── */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        th {
+            text-align: left;
+            padding: 10px 12px;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            color: var(--text-primary);
+            vertical-align: middle;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* ── Badges ────────────────────────────────────────────────────── */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .badge.active, .badge.verified, .badge.healthy {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .badge.proposed, .badge.pending {
+            background: rgba(0, 242, 254, 0.12);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(0, 242, 254, 0.25);
+        }
+
+        .badge.frozen, .badge.revoked, .badge.degraded {
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .badge.at_risk, .badge.reverified, .badge.investigating {
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        /* ── Buttons ───────────────────────────────────────────────────── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 9px 18px;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid transparent;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-ocean);
+            color: #06111e;
+            box-shadow: 0 4px 14px rgba(0, 242, 254, 0.3);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-danger {
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+
+        .btn-danger:hover {
+            background: var(--accent-red);
+            color: white;
+        }
+
+        .btn-success {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-success:hover {
+            background: var(--accent-green);
+            color: white;
+        }
+
+        .btn-sm {
+            padding: 5px 10px;
+            font-size: 11.5px;
+            border-radius: 6px;
+        }
+
+        /* ── Form Inputs ───────────────────────────────────────────────── */
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12.5px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 14px;
+            background: rgba(10, 13, 20, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 13.5px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--border-focus);
+            box-shadow: 0 0 0 2px rgba(0, 242, 254, 0.15);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* ── Demo Runner Bar (Floating / Bottom Action) ────────────────── */
+        .demo-bar {
+            background: rgba(17, 23, 38, 0.95);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: var(--radius-md);
+            padding: 14px 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            box-shadow: var(--shadow-glow-cyan);
+            backdrop-filter: blur(16px);
+        }
+
+        .demo-scenes {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .scene-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .scene-btn:hover {
+            color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            background: rgba(0, 242, 254, 0.08);
+        }
+
+        /* ── Modal ─────────────────────────────────────────────────────── */
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-backdrop.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            max-width: 540px;
+            width: 100%;
+            padding: 28px;
+            box-shadow: var(--shadow-md);
+            animation: modalPop 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes modalPop {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* ── Certificate Preview ───────────────────────────────────────── */
+        .cert-box {
+            background: linear-gradient(135deg, #0e1e38 0%, #081224 100%);
+            border: 2px solid #00f2fe;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            position: relative;
+            margin: 16px 0;
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.2);
+        }
+
+        .cert-seal {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            background: var(--gradient-ocean);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .code-pill {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11.5px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--accent-cyan);
+        }
+
+        /* ── Responsive adjustments ────────────────────────────────────── */
+        @media (max-width: 900px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .nav-roles { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── Top Navigation Bar ────────────────────────────────────────── -->
+    <header class="navbar">
+        <div class="brand" onclick="switchRole('portal_select')">
+            <div class="brand-logo">🌊</div>
+            <div class="brand-text">
+                <h1>TIDE Registry</h1>
+                <p>Living Blue Carbon MRV</p>
+            </div>
+        </div>
+
+        <nav class="nav-roles">
+            <button class="nav-tab active" id="tab-portal_select" onclick="switchRole('portal_select')">
+                <span>🔀</span> Role Switcher
+            </button>
+            <button class="nav-tab" id="tab-admin" onclick="switchRole('admin')">
+                <span>🏛️</span> Admin
+            </button>
+            <button class="nav-tab" id="tab-project_owner" onclick="switchRole('project_owner')">
+                <span>🌿</span> Project Owner
+            </button>
+            <button class="nav-tab" id="tab-buyer" onclick="switchRole('buyer')">
+                <span>💼</span> Buyer Marketplace
+            </button>
+            <button class="nav-tab" id="tab-community" onclick="switchRole('community')">
+                <span>👥</span> Community
+            </button>
+        </nav>
+
+        <div class="nav-actions">
+            <div class="role-pill" id="active-role-display">
+                <span class="status-dot green"></span>
+                <span id="role-name-text">Portal Gateway</span>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="refreshDashboardData()">
+                ↻ Sync
+            </button>
+        </div>
+    </header>
+
+    <!-- ── Main View Container ───────────────────────────────────────── -->
+    <main class="main-container">
+
+        <!-- ── Interactive 6-Scene Demo Controller ──────────────────────── -->
+        <div class="demo-bar">
+            <div>
+                <strong style="font-size: 13px; color: var(--accent-cyan);">🎬 6-Scene Continuous MRV Story:</strong>
+                <span style="font-size: 12px; color: var(--text-muted); margin-left: 6px;">Live trigger end-to-end verification arc</span>
+            </div>
+            <div class="demo-scenes">
+                <button class="scene-btn" onclick="runDemoScene(1)">1. Healthy Plot</button>
+                <button class="scene-btn" onclick="runDemoScene(2)">2. IoT Stream</button>
+                <button class="scene-btn" onclick="runDemoScene(3)">3. Community Alert</button>
+                <button class="scene-btn" onclick="runDemoScene(4)">4. Satellite Loss</button>
+                <button class="scene-btn" onclick="runDemoScene(5)">5. Auto-Freeze</button>
+                <button class="scene-btn" onclick="runDemoScene(6)">6. Reverify & Offset</button>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- VIEW 0: PORTAL SELECTOR / LOGIN GATEWAY                         -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <section class="view-section active" id="view-portal_select">
+            <div class="hero-banner">
+                <div class="hero-badge">Verified Living Carbon Ecosystem</div>
+                <h2 class="hero-title">Select Your <span>TIDE Portal</span> to Enter</h2>
+                <p class="hero-subtitle">
+                    Continuous multi-stream MRV fusing Sentinel-2 satellite imagery, on-ground IoT sensors, 
+                    and local community ground-truth into smart living carbon assets.
+                </p>
+            </div>
+
+            <div class="portal-grid">
+                <!-- Portal 1: Admin -->
+                <div class="portal-card" style="--card-accent: var(--gradient-purple);">
+                    <div>
+                        <div class="portal-icon">🏛️</div>
+                        <h3>Government / Admin</h3>
+                        <p>Registry authority oversight, confidence threshold policy controls, and manual audit freeze/reverification overrides.</p>
+                        <ul class="portal-features">
+                            <li>System-wide registry telemetry</li>
+                            <li>Confidence threshold manager</li>
+                            <li>Community ground-truth validation</li>
+                            <li>Oracle & audit trail inspection</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="switchRole('admin')">
+                        Enter Admin Portal →
+                    </button>
+                </div>
+
+                <!-- Portal 2: Project Owner -->
+                <div class="portal-card" style="--card-accent: var(--gradient-emerald);">
+                    <div>
+                        <div class="portal-icon">🌿</div>
+                        <h3>Project Developer</h3>
+                        <p>Plot registration, live IoT ground station telemetry, Digital Carbon Twin monitoring, and conservative minting.</p>
+                        <ul class="portal-features">
+                            <li>Plot boundaries & acreage</li>
+                            <li>IoT ground sensor trust score</li>
+                            <li>Verra VM0007 carbon estimation</li>
+                            <li>Living Credit issuance engine</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="switchRole('project_owner')">
+                        Enter Developer Portal →
+                    </button>
+                </div>
+
+                <!-- Portal 3: Buyer -->
+                <div class="portal-card" style="--card-accent: var(--gradient-ocean);">
+                    <div>
+                        <div class="portal-icon">💼</div>
+                        <h3>Buyer & Marketplace</h3>
+                        <p>Discover auditable living credits, inspect Proof-of-Permanence evidence trails, transfer, and permanently retire offsets.</p>
+                        <ul class="portal-features">
+                            <li>Living credit batch explorer</li>
+                            <li>Proof-of-Permanence trail</li>
+                            <li>On-chain transfer protections</li>
+                            <li>Corporate offset retirement certs</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="switchRole('buyer')">
+                        Enter Marketplace →
+                    </button>
+                </div>
+
+                <!-- Portal 4: Community -->
+                <div class="portal-card" style="--card-accent: var(--gradient-amber);">
+                    <div>
+                        <div class="portal-icon">👥</div>
+                        <h3>Community Reporter</h3>
+                        <p>Local fisherfolk & warden field reporting, geotagged photographic evidence upload, and community verification incentives.</p>
+                        <ul class="portal-features">
+                            <li>Geotagged anomaly alert filing</li>
+                            <li>Photo evidence IPFS hashing</li>
+                            <li>Community verification karma</li>
+                            <li>Public transparency feed</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="switchRole('community')">
+                        Enter Community Portal →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- VIEW 1: GOVERNMENT / ADMIN DASHBOARD                            -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <section class="view-section" id="view-admin">
+            <div class="dash-header">
+                <div class="dash-title-group">
+                    <h2>🏛️ Government & Registry Authority Portal</h2>
+                    <p>High-level registry oversight, threshold policies, and cryptographic verification governance.</p>
+                </div>
+                <div style="display: flex; gap: 8px;">
+                    <button class="btn btn-secondary btn-sm" onclick="openThresholdModal()">
+                        ⚙️ Configure Policy
+                    </button>
+                </div>
+            </div>
+
+            <!-- Registry KPIs -->
+            <div class="kpi-row">
+                <div class="kpi-card">
+                    <div class="kpi-label">Registered Plots <span>📍</span></div>
+                    <div class="kpi-value" id="admin-kpi-plots">0</div>
+                    <div class="kpi-sub">Total blue carbon zones</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Active Living Credits <span>🌱</span></div>
+                    <div class="kpi-value" id="admin-kpi-active" style="color: var(--accent-green);">0 t</div>
+                    <div class="kpi-sub">Verified $C_{lower}$ tradable</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Frozen Credits <span>❄️</span></div>
+                    <div class="kpi-value" id="admin-kpi-frozen" style="color: var(--accent-red);">0 t</div>
+                    <div class="kpi-sub">Locked due to anomaly alerts</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Retired Offsets <span>📜</span></div>
+                    <div class="kpi-value" id="admin-kpi-retired" style="color: var(--accent-cyan);">0 t</div>
+                    <div class="kpi-sub">Corporate footprints neutralized</div>
+                </div>
+            </div>
+
+            <!-- Microservices Health & Regulatory Controls -->
+            <div class="grid-2">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>⚡ TIDE Microservices Health</h3>
+                        <span class="badge active" id="sys-overall-badge">All Systems Normal</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <strong>Backend Hub (M5)</strong>
+                                <div style="font-size: 11.5px; color: var(--text-muted);">Port 8000 — SQLite & Orchestration</div>
+                            </div>
+                            <span class="badge active" id="admin-srv-backend">ONLINE</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <strong>AI / ML Intelligence (M1)</strong>
+                                <div style="font-size: 11.5px; color: var(--text-muted);">Port 8001 — Carbon & Anomaly Estimation</div>
+                            </div>
+                            <span class="badge" id="admin-srv-ai">CHECKING</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <strong>Digital Twin & GIS Engine (M2)</strong>
+                                <div style="font-size: 11.5px; color: var(--text-muted);">Port 8002 — Satellite & Temporal History</div>
+                            </div>
+                            <span class="badge" id="admin-srv-twin">CHECKING</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>⚖️ Continuous MRV Thresholds</h3>
+                        <button class="btn btn-secondary btn-sm" onclick="openThresholdModal()">Adjust</button>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 14px;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+                                <span>Mint Threshold (Score ≥)</span>
+                                <strong id="admin-thresh-mint" style="color: var(--accent-green);">85.0%</strong>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.06); height: 6px; border-radius: 3px;">
+                                <div style="background: var(--accent-green); height: 100%; width: 85%; border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+                                <span>Automatic Freeze Trigger (Score <)</span>
+                                <strong id="admin-thresh-freeze" style="color: var(--accent-red);">60.0%</strong>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.06); height: 6px; border-radius: 3px;">
+                                <div style="background: var(--accent-red); height: 100%; width: 60%; border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                        <p style="font-size: 11.5px; color: var(--text-muted);">
+                            Policy Rule: If ecological health degrades below freeze threshold, smart contract automatically locks credit transfers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Living Credits Registry Oversight -->
+            <div class="panel" style="margin-bottom: 24px;">
+                <div class="panel-header">
+                    <h3>📜 Living Carbon Credit Registry Batches</h3>
+                    <span style="font-size: 12px; color: var(--text-muted);">Audit & override status controls</span>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Credit ID</th>
+                                <th>Plot ID</th>
+                                <th>Estimate</th>
+                                <th>Creditable ($C_{lower}$)</th>
+                                <th>MRV Score</th>
+                                <th>Living Status</th>
+                                <th>Evidence Hash</th>
+                                <th>Admin Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-credits-tbody">
+                            <tr><td colspan="8" style="text-align: center; color: var(--text-muted);">Loading credits...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Community Reports Moderation -->
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>👥 Community Ground-Truth Field Reports</h3>
+                    <span style="font-size: 12px; color: var(--text-muted);">Review and confirm local alerts</span>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Plot</th>
+                                <th>Submitter</th>
+                                <th>Description</th>
+                                <th>Evidence URI</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-reports-tbody">
+                            <tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Loading community reports...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- VIEW 2: PROJECT DEVELOPER DASHBOARD                             -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <section class="view-section" id="view-project_owner">
+            <div class="dash-header">
+                <div class="dash-title-group">
+                    <h2>🌿 Project Developer & Field Officer Portal</h2>
+                    <p>Manage coastal conservation plots, real-time IoT sensors, and continuous conservative minting.</p>
+                </div>
+                <button class="btn btn-primary btn-sm" onclick="openNewPlotModal()">
+                    + Register New Plot
+                </button>
+            </div>
+
+            <!-- Selected Plot Telemetry Card -->
+            <div class="grid-3">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>📍 Plot Overview</h3>
+                        <span class="badge active" id="dev-plot-health-badge">HEALTHY</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--text-muted);">Plot ID:</span>
+                            <strong id="dev-plot-id">MNG-001</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--text-muted);">Project Name:</span>
+                            <span id="dev-plot-name">Pichavaram Mangrove</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--text-muted);">Acreage:</span>
+                            <span id="dev-plot-area">280.0 Ha</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--text-muted);">Ecosystem Type:</span>
+                            <span id="dev-plot-eco">Mangrove Forest</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--text-muted);">Baseline NDVI:</span>
+                            <span id="dev-plot-baseline">0.42</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>📡 IoT Ground Station</h3>
+                        <span class="badge active">Trust: 96/100</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 12.5px;">
+                        <div style="background: rgba(255,255,255,0.03); padding: 8px 10px; border-radius: 8px;">
+                            <span style="color: var(--text-muted);">Salinity</span>
+                            <div style="font-size: 16px; font-weight: 700; color: var(--accent-cyan);" id="dev-iot-sal">14.0 ppt</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 8px 10px; border-radius: 8px;">
+                            <span style="color: var(--text-muted);">pH Level</span>
+                            <div style="font-size: 16px; font-weight: 700; color: var(--accent-green);" id="dev-iot-ph">7.8</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 8px 10px; border-radius: 8px;">
+                            <span style="color: var(--text-muted);">Temperature</span>
+                            <div style="font-size: 16px; font-weight: 700; color: var(--accent-amber);" id="dev-iot-temp">28.5 °C</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 8px 10px; border-radius: 8px;">
+                            <span style="color: var(--text-muted);">Water Level</span>
+                            <div style="font-size: 16px; font-weight: 700; color: var(--accent-blue);" id="dev-iot-water">1.1 m</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>🌐 Digital Twin State</h3>
+                        <span class="badge active">Real-time</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--text-muted);">Live Health Score:</span>
+                            <strong id="dev-twin-health" style="color: var(--accent-green);">94.2 / 100</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--text-muted);">Permanence Score:</span>
+                            <strong id="dev-twin-perm" style="color: var(--accent-cyan);">91.0%</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--text-muted);">Current Carbon Stock:</span>
+                            <span id="dev-twin-carbon">3,139.6 tCO₂e</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continuous MRV Estimation & Minting Engine -->
+            <div class="panel" style="margin-bottom: 24px;">
+                <div class="panel-header">
+                    <h3>🔬 Continuous MRV Carbon Estimation & Minting Pipeline</h3>
+                    <span style="font-size: 12px; color: var(--text-muted);">Verra VM0007 Conservative Lower Bound</span>
+                </div>
+                
+                <div class="grid-2">
+                    <div>
+                        <div class="form-group">
+                            <label style="display: flex; justify-content: space-between;">
+                                <span>Simulate Satellite NDVI Input</span>
+                                <strong id="dev-slider-val" style="color: var(--accent-cyan);">0.38</strong>
+                            </label>
+                            <input type="range" class="form-control" id="dev-ndvi-slider" min="0.10" max="0.65" step="0.01" value="0.38"
+                                   oninput="document.getElementById('dev-slider-val').textContent = this.value">
+                        </div>
+
+                        <div style="display: flex; gap: 10px; margin-bottom: 16px;">
+                            <button class="btn btn-primary" onclick="triggerDevAnalysis(false)" style="flex: 1;">
+                                🌿 Run AI Estimation
+                            </button>
+                            <button class="btn btn-danger" onclick="triggerDevAnalysis(true)">
+                                ⚠️ Inject Degradation
+                            </button>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(10, 13, 20, 0.7); border: 1px solid var(--border-color); border-radius: 8px; padding: 16px; font-family: 'JetBrains Mono', monospace; font-size: 12px;" id="dev-mrv-output">
+                        // Output from Continuous MRV Engine will stream here...<br>
+                        Click "Run AI Estimation" above to calculate creditable $C_{lower}$.
+                    </div>
+                </div>
+
+                <!-- Conservative Minting Action -->
+                <div style="border-top: 1px solid var(--border-color); padding-top: 16px; margin-top: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                    <div>
+                        <strong>Ready to Issue Living Carbon Credit Batch?</strong>
+                        <div style="font-size: 12px; color: var(--text-muted);">Mints conservative lower-bound quantity per Verra VM0007 methodology.</div>
+                    </div>
+                    <button class="btn btn-success" id="btn-mint-credit" onclick="mintCurrentEstimate()">
+                        🌱 Mint Verified Living Credit Batch
+                    </button>
+                </div>
+            </div>
+
+            <!-- Recent Observations Log -->
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>📊 Recent IoT & Satellite Observations</h3>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>NDVI</th>
+                                <th>Salinity</th>
+                                <th>Temp (°C)</th>
+                                <th>pH</th>
+                                <th>Moisture</th>
+                                <th>Source</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dev-obs-tbody">
+                            <tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Loading observations...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- VIEW 3: ESG BUYER & MARKETPLACE DASHBOARD                       -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <section class="view-section" id="view-buyer">
+            <div class="dash-header">
+                <div class="dash-title-group">
+                    <h2>💼 ESG Corporate Buyer & Marketplace</h2>
+                    <p>Inspect auditable Living Carbon Credits with real-time Proof-of-Permanence and retire offsets.</p>
+                </div>
+            </div>
+
+            <!-- Living Credits Marketplace Grid -->
+            <div style="margin-bottom: 24px;">
+                <h3 style="font-size: 16px; margin-bottom: 14px;">🌱 Available Living Blue Carbon Credit Batches</h3>
+                <div class="grid-3" id="buyer-market-grid">
+                    <!-- Dynamic Credit Cards will render here -->
+                </div>
+            </div>
+
+            <!-- Proof-of-Permanence Explorer & Retirement History -->
+            <div class="grid-2">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>🔍 Proof-of-Permanence Explorer</h3>
+                        <span class="code-pill">ERC-1155 Batch Audit</span>
+                    </div>
+                    <div style="font-size: 13px; line-height: 1.6; color: var(--text-secondary);">
+                        <p style="margin-bottom: 12px;">
+                            Unlike static one-time carbon credits, every <strong>TIDE Living Credit</strong> is continuously backed by real ecological telemetry:
+                        </p>
+                        <ul style="list-style: none; margin-bottom: 16px;">
+                            <li style="margin-bottom: 6px;">🛰️ <strong>Sentinel-2 Satellite:</strong> Multi-temporal NDVI monitoring</li>
+                            <li style="margin-bottom: 6px;">📡 <strong>IoT Edge Station:</strong> Real-time salinity, pH & water table validation</li>
+                            <li style="margin-bottom: 6px;">👥 <strong>Community Ground-Truth:</strong> Geotagged photographic consensus</li>
+                            <li style="margin-bottom: 6px;">⛓️ <strong>Smart Contract Rule:</strong> Automated transfer freeze on degradation</li>
+                        </ul>
+                        <div style="background: rgba(0, 242, 254, 0.06); border: 1px solid rgba(0, 242, 254, 0.2); padding: 12px; border-radius: 8px;">
+                            <span style="color: var(--accent-cyan); font-weight: 600;">Verra VM0007 Compliance:</span>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">
+                                $C_{lower} = C_{estimate} - 1.645\sigma$ ensures 90% conservative confidence.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>📜 Corporate Offset Retirement Log</h3>
+                        <span class="badge active">Immutable</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Certificate ID</th>
+                                    <th>Beneficiary</th>
+                                    <th>Tonnes</th>
+                                    <th>Reason</th>
+                                </tr>
+                            </thead>
+                            <tbody id="buyer-retirements-tbody">
+                                <tr><td colspan="4" style="text-align: center; color: var(--text-muted);">No retirements logged yet.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- VIEW 4: COMMUNITY REPORTING PORTAL                              -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <section class="view-section" id="view-community">
+            <div class="dash-header">
+                <div class="dash-title-group">
+                    <h2>👥 Coastal Community & Fisherfolk Portal</h2>
+                    <p>Empowering local stewards with ground-truth verification, photo evidence, and rewards.</p>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <!-- Submit Report Form -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>📸 Submit Field Observation / Anomaly Alert</h3>
+                    </div>
+                    <form id="community-report-form" onsubmit="handleReportSubmit(event)">
+                        <div class="form-group">
+                            <label>Your Name / Coastal Ward ID</label>
+                            <input type="text" class="form-control" id="rep-name" required placeholder="e.g. Ramesh K. (Pichavaram Fisherfolk Union)">
+                        </div>
+                        <div class="form-group">
+                            <label>Target Mangrove / Seagrass Plot</label>
+                            <select class="form-control" id="rep-plot-id">
+                                <option value="MNG-001">MNG-001 — Pichavaram Mangrove Forest</option>
+                                <option value="MNG-002">MNG-002 — Sundarbans Delta Zone Beta</option>
+                                <option value="SGR-001">SGR-001 — Gulf of Mannar Seagrass</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Observation Category</label>
+                            <select class="form-control" id="rep-category">
+                                <option value="healthy_growth">🌿 Healthy Canopy Regrowth</option>
+                                <option value="clearing">⚠️ Suspected Illegal Clearing / Encroachment</option>
+                                <option value="storm_damage">🌪️ Cyclone / Tidal Storm Damage</option>
+                                <option value="sensor_issue">📡 IoT Sensor Node Physical Check</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Observation Details & Landmark</label>
+                            <textarea class="form-control" id="rep-desc" required placeholder="Describe canopy density, tidal water clarity, or any observed disturbance near GPS coordinates..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            📡 Submit Geotagged Field Report to Registry
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Community Karma & Feed -->
+                <div>
+                    <div class="panel" style="margin-bottom: 20px;">
+                        <div class="panel-header">
+                            <h3>🏆 Community Verification Karma</h3>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="font-size: 38px; font-weight: 800; color: var(--accent-amber);">1,450</div>
+                            <div style="font-size: 13px; color: var(--text-secondary);">
+                                <strong>Steward Reputation Points</strong><br>
+                                Earned by local community guardians for verified ground-truth alerts.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h3>🌐 Public Ground-Truth Feed</h3>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 12px;" id="community-public-feed">
+                            <!-- Stream of reports -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ── MODAL: RETIRE CARBON OFFSET ──────────────────────────────── -->
+    <div class="modal-backdrop" id="modal-retire">
+        <div class="modal-content">
+            <div class="panel-header">
+                <h3>📜 Permanent Carbon Offset Retirement</h3>
+                <button class="btn btn-secondary btn-sm" onclick="closeModal('modal-retire')">✕</button>
+            </div>
+            <form onsubmit="handleRetireSubmit(event)">
+                <input type="hidden" id="retire-credit-id">
+                <div class="form-group">
+                    <label>Credit Batch ID</label>
+                    <input type="text" class="form-control" id="retire-credit-display" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Amount to Offset (Tonnes $CO_2e$)</label>
+                    <input type="number" class="form-control" id="retire-amount" step="0.1" min="0.1" max="100" value="5.0" required>
+                </div>
+                <div class="form-group">
+                    <label>Corporate Beneficiary Entity</label>
+                    <input type="text" class="form-control" id="retire-beneficiary" placeholder="e.g. GreenTech India Pvt Ltd" required>
+                </div>
+                <div class="form-group">
+                    <label>Offset Purpose / Scope</label>
+                    <input type="text" class="form-control" id="retire-reason" placeholder="e.g. Scope 1 & 2 Emissions Neutralization Q1 2025" required>
+                </div>
+                <button type="submit" class="btn btn-success" style="width: 100%; margin-top: 10px;">
+                    🔥 Permanently Burn & Generate Certificate
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ── MODAL: TRANSFER LIVING CREDITS ───────────────────────────── -->
+    <div class="modal-backdrop" id="modal-transfer">
+        <div class="modal-content">
+            <div class="panel-header">
+                <h3>🔄 Transfer Living Carbon Credits</h3>
+                <button class="btn btn-secondary btn-sm" onclick="closeModal('modal-transfer')">✕</button>
+            </div>
+            <form onsubmit="handleTransferSubmit(event)">
+                <input type="hidden" id="transfer-credit-id">
+                <div class="form-group">
+                    <label>Credit Batch ID</label>
+                    <input type="text" class="form-control" id="transfer-credit-display" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Recipient Wallet / Organization Address</label>
+                    <input type="text" class="form-control" id="transfer-recipient" placeholder="0x71C...B42" required>
+                </div>
+                <div class="form-group">
+                    <label>Transfer Amount (Tonnes $CO_2e$)</label>
+                    <input type="number" class="form-control" id="transfer-amount" step="0.1" min="0.1" value="5.0" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                    ⛓️ Execute On-Chain Transfer
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ── MODAL: CERTIFICATE VIEWER ─────────────────────────────────── -->
+    <div class="modal-backdrop" id="modal-cert">
+        <div class="modal-content" style="max-width: 600px;">
+            <div class="cert-box">
+                <div class="cert-seal">🌿</div>
+                <h2 style="font-size: 22px; color: var(--accent-cyan); margin-bottom: 4px;">Official Certificate of Carbon Retirement</h2>
+                <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px;">TIDE Living Carbon Registry — Verra VM0007 Standard</div>
+                
+                <div style="font-size: 14px; margin-bottom: 12px;">This certifies that</div>
+                <div style="font-size: 20px; font-weight: 700; color: #ffffff; margin-bottom: 12px;" id="cert-beneficiary-text">
+                    GreenTech India Pvt Ltd
+                </div>
+                <div style="font-size: 14px; margin-bottom: 14px;">has permanently retired and neutralized</div>
+                
+                <div style="font-size: 32px; font-weight: 800; color: var(--accent-green); margin-bottom: 14px;" id="cert-amount-text">
+                    5.00 tCO₂e
+                </div>
+                
+                <div style="font-size: 12.5px; color: var(--text-secondary); margin-bottom: 16px;" id="cert-reason-text">
+                    Scope 1 & 2 Emissions Neutralization Q1 2025
+                </div>
+
+                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px; font-size: 11px; color: var(--text-muted); display: flex; justify-content: space-between;">
+                    <span>Certificate ID: <strong class="code-pill" id="cert-id-text">CERT-TIDE-001</strong></span>
+                    <span>Status: <strong style="color: var(--accent-green);">IMMUTABLE</strong></span>
+                </div>
+            </div>
+            <button class="btn btn-secondary" style="width: 100%;" onclick="closeModal('modal-cert')">Close Certificate</button>
+        </div>
+    </div>
+
+    <!-- ── MODAL: THRESHOLDS CONFIG ──────────────────────────────────── -->
+    <div class="modal-backdrop" id="modal-threshold">
+        <div class="modal-content">
+            <div class="panel-header">
+                <h3>⚖️ Configure MRV Confidence Thresholds</h3>
+                <button class="btn btn-secondary btn-sm" onclick="closeModal('modal-threshold')">✕</button>
+            </div>
+            <form onsubmit="handleThresholdSubmit(event)">
+                <div class="form-group">
+                    <label>Mint Eligibility Threshold (%)</label>
+                    <input type="number" class="form-control" id="cfg-mint" min="50" max="100" step="1" value="85" required>
+                    <small style="color: var(--text-muted); font-size: 11px;">MRV Score ≥ this triggers living credit minting approval.</small>
+                </div>
+                <div class="form-group">
+                    <label>Automated Freeze Trigger (%)</label>
+                    <input type="number" class="form-control" id="cfg-freeze" min="10" max="80" step="1" value="60" required>
+                    <small style="color: var(--text-muted); font-size: 11px;">MRV Score < this immediately locks living credit transfers.</small>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                    Save Regulatory Policy
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ── MODAL: REGISTER NEW PLOT ─────────────────────────────────── -->
+    <div class="modal-backdrop" id="modal-new-plot">
+        <div class="modal-content">
+            <div class="panel-header">
+                <h3>📍 Register New Blue Carbon Plot</h3>
+                <button class="btn btn-secondary btn-sm" onclick="closeModal('modal-new-plot')">✕</button>
+            </div>
+            <form onsubmit="handleNewPlotSubmit(event)">
+                <div class="form-group">
+                    <label>Plot ID</label>
+                    <input type="text" class="form-control" id="new-plot-id" required placeholder="e.g. MNG-003">
+                </div>
+                <div class="form-group">
+                    <label>Project Name</label>
+                    <input type="text" class="form-control" id="new-plot-name" required placeholder="e.g. Mahanadi Delta Mangrove Corridor">
+                </div>
+                <div class="grid-2" style="margin-bottom: 0;">
+                    <div class="form-group">
+                        <label>Latitude (°N)</label>
+                        <input type="number" step="0.001" class="form-control" id="new-plot-lat" required value="20.296">
+                    </div>
+                    <div class="form-group">
+                        <label>Longitude (°E)</label>
+                        <input type="number" step="0.001" class="form-control" id="new-plot-lng" required value="86.715">
+                    </div>
+                </div>
+                <div class="grid-2" style="margin-bottom: 0;">
+                    <div class="form-group">
+                        <label>Area (Hectares)</label>
+                        <input type="number" step="1" class="form-control" id="new-plot-area" required value="120">
+                    </div>
+                    <div class="form-group">
+                        <label>Baseline NDVI</label>
+                        <input type="number" step="0.01" class="form-control" id="new-plot-ndvi" required value="0.45">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Ecosystem Type</label>
+                    <select class="form-control" id="new-plot-eco">
+                        <option value="mangrove">Mangrove Forest</option>
+                        <option value="seagrass">Seagrass Meadow</option>
+                        <option value="salt_marsh">Tidal Salt Marsh</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                    Submit Plot Registration
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ── Core Frontend JavaScript Logic ───────────────────────────── -->
+    <script>
+        let currentRole = 'portal_select';
+        let latestDashboardData = null;
+        let lastEstimatedLower = 32.1;
+        let lastEstimatedCO2 = 42.0;
+
+        // ── API Fetch Helper ──────────────────────────────────────────
+        async function fetchAPI(endpoint, options = {}) {
+            try {
+                const res = await fetch(endpoint, options);
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.detail || 'Request failed');
+                return data;
+            } catch (err) {
+                console.error('API Error:', err);
+                return { error: err.message };
+            }
+        }
+
+        // ── Role & View Switcher ───────────────────────────────────────
+        function switchRole(role) {
+            currentRole = role;
+            
+            // Update tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
+            const activeTab = document.getElementById(`tab-${role}`);
+            if (activeTab) activeTab.classList.add('active');
+
+            // Update views
+            document.querySelectorAll('.view-section').forEach(view => view.classList.remove('active'));
+            const activeView = document.getElementById(`view-${role}`);
+            if (activeView) activeView.classList.add('active');
+
+            // Update header pill
+            const roleMap = {
+                'portal_select': 'Portal Gateway',
+                'admin': '🏛️ Registry Admin',
+                'project_owner': '🌿 Project Developer',
+                'buyer': '💼 ESG Corporate Buyer',
+                'community': '👥 Community Steward'
+            };
+            document.getElementById('role-name-text').textContent = roleMap[role] || 'User';
+
+            // Refresh data on switch
+            refreshDashboardData();
+        }
+
+        // ── Refresh Central Data ───────────────────────────────────────
+        async function refreshDashboardData() {
+            const data = await fetchAPI('/api/dashboard-data');
+            if (data.error) {
+                console.error('Failed to load dashboard data:', data.error);
+                return;
+            }
+            latestDashboardData = data;
+            renderAllViews(data);
+        }
+
+        function renderAllViews(data) {
+            renderAdminView(data);
+            renderProjectOwnerView(data);
+            renderBuyerView(data);
+            renderCommunityView(data);
+        }
+
+        // ── Render Admin View ──────────────────────────────────────────
+        function renderAdminView(data) {
+            const stats = data.stats || {};
+            document.getElementById('admin-kpi-plots').textContent = stats.plots || 0;
+            document.getElementById('admin-kpi-active').textContent = `${stats.active_credits_tonnes || 0} t`;
+            document.getElementById('admin-kpi-frozen').textContent = `${stats.frozen_credits_tonnes || 0} t`;
+            document.getElementById('admin-kpi-retired').textContent = `${stats.total_retired_tonnes || 0} t`;
+
+            // Microservice status badges
+            const srv = data.services || {};
+            updateServiceBadge('admin-srv-ai', srv.ai?.status === 'ok');
+            updateServiceBadge('admin-srv-twin', srv.twin?.status === 'ok');
+
+            // Thresholds
+            const thr = data.config?.thresholds || {};
+            document.getElementById('admin-thresh-mint').textContent = `${thr.mint || 85}%`;
+            document.getElementById('admin-thresh-freeze').textContent = `${thr.freeze || 60}%`;
+
+            // Credits table
+            const tbody = document.getElementById('admin-credits-tbody');
+            const credits = data.credits || [];
+            if (!credits.length) {
+                tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; color: var(--text-muted);">No credits registered</td></tr>';
+            } else {
+                tbody.innerHTML = credits.map(c => `
+                    <tr>
+                        <td><strong>${c.id}</strong></td>
+                        <td>${c.plot_id}</td>
+                        <td>${c.quantity} t</td>
+                        <td><strong style="color: var(--accent-green);">${c.lower_bound} t</strong></td>
+                        <td>${c.mrv_score || '—'}%</td>
+                        <td>${renderBadge(c.status)}</td>
+                        <td><span class="code-pill">${(c.evidence_hash || '0xQm...').substring(0, 14)}...</span></td>
+                        <td>
+                            <div style="display: flex; gap: 4px;">
+                                ${c.status !== 'ACTIVE' ? `<button class="btn btn-success btn-sm" onclick="setCreditStatus('${c.id}', 'ACTIVE')">Activate</button>` : ''}
+                                ${c.status !== 'FROZEN' ? `<button class="btn btn-danger btn-sm" onclick="setCreditStatus('${c.id}', 'FROZEN')">Freeze</button>` : ''}
+                                ${c.status === 'FROZEN' ? `<button class="btn btn-secondary btn-sm" onclick="setCreditStatus('${c.id}', 'REVERIFIED')">Reverify</button>` : ''}
+                            </div>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+
+            // Reports table
+            const repBody = document.getElementById('admin-reports-tbody');
+            const reports = data.community_reports || [];
+            if (!reports.length) {
+                repBody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">No reports submitted</td></tr>';
+            } else {
+                repBody.innerHTML = reports.map(r => `
+                    <tr>
+                        <td>${new Date(r.created_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</td>
+                        <td>${r.plot_id}</td>
+                        <td><strong>${r.submitter}</strong></td>
+                        <td>${r.description}</td>
+                        <td><span class="code-pill">${r.photo_uri || 'ipfs://QmField...'}</span></td>
+                        <td>${renderBadge(r.status)}</td>
+                        <td>
+                            <div style="display: flex; gap: 4px;">
+                                <button class="btn btn-success btn-sm" onclick="setReportStatus('${r.id}', 'verified')">Verify</button>
+                                <button class="btn btn-secondary btn-sm" onclick="setReportStatus('${r.id}', 'dismissed')">Dismiss</button>
+                            </div>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+        }
+
+        // ── Render Developer View ──────────────────────────────────────
+        function renderProjectOwnerView(data) {
+            const plot = data.demo_plot;
+            if (plot) {
+                document.getElementById('dev-plot-id').textContent = plot.id;
+                document.getElementById('dev-plot-name').textContent = plot.name;
+                document.getElementById('dev-plot-area').textContent = `${plot.area_ha} Ha`;
+                document.getElementById('dev-plot-eco').textContent = plot.ecosystem_type;
+                document.getElementById('dev-plot-baseline').textContent = plot.baseline_ndvi;
+                document.getElementById('dev-plot-health-badge').textContent = (plot.health_status || 'HEALTHY').toUpperCase();
+            }
+
+            // Observations Table
+            const obsBody = document.getElementById('dev-obs-tbody');
+            const obs = data.observations || [];
+            if (obs.length) {
+                obsBody.innerHTML = obs.slice(0, 6).map(o => `
+                    <tr>
+                        <td>${new Date(o.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</td>
+                        <td><strong>${o.ndvi || '—'}</strong></td>
+                        <td>${o.salinity || '—'} ppt</td>
+                        <td>${o.temperature || '—'} °C</td>
+                        <td>${o.ph || '—'}</td>
+                        <td>${o.soil_moisture || '—'}%</td>
+                        <td><span class="code-pill">${o.source}</span></td>
+                    </tr>
+                `).join('');
+            }
+        }
+
+        // ── Render Buyer View ──────────────────────────────────────────
+        function renderBuyerView(data) {
+            const grid = document.getElementById('buyer-market-grid');
+            const credits = data.credits || [];
+            
+            if (!credits.length) {
+                grid.innerHTML = '<p style="color: var(--text-muted);">No credits available for trading.</p>';
+            } else {
+                grid.innerHTML = credits.map(c => {
+                    const isFrozen = c.status === 'FROZEN';
+                    return `
+                        <div class="portal-card" style="border-color: ${isFrozen ? 'rgba(239, 68, 68, 0.4)' : 'var(--border-color)'};">
+                            <div>
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                                    <div style="font-size: 24px;">🌊</div>
+                                    ${renderBadge(c.status)}
+                                </div>
+                                <h3 style="font-size: 18px;">Plot ${c.plot_id} Batch</h3>
+                                <p style="font-size: 12.5px; color: var(--text-secondary); margin-bottom: 14px;">
+                                    Verified Living Blue Carbon Batch #${c.id}
+                                </p>
+                                <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; margin-bottom: 16px;">
+                                    <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+                                        <span style="color: var(--text-muted);">Creditable Tonnes ($C_{lower}$):</span>
+                                        <strong style="color: var(--accent-green); font-size: 16px;">${c.lower_bound} tCO₂e</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; font-size: 12px;">
+                                        <span style="color: var(--text-muted);">Initial MRV Score:</span>
+                                        <span>${c.mrv_score || 88}%</span>
+                                    </div>
+                                </div>
+                                ${isFrozen ? `
+                                    <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 6px; padding: 8px 10px; font-size: 11.5px; color: #f87171; margin-bottom: 14px;">
+                                        ⚠️ <strong>Trading Locked On-Chain:</strong> Ecological anomaly detected. Reverification in progress.
+                                    </div>
+                                ` : ''}
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="btn btn-secondary btn-sm" style="flex: 1;" ${isFrozen ? 'disabled' : ''} onclick="openTransferModal('${c.id}', ${c.lower_bound})">
+                                    🔄 Transfer
+                                </button>
+                                <button class="btn btn-success btn-sm" style="flex: 1;" ${isFrozen ? 'disabled' : ''} onclick="openRetireModal('${c.id}', ${c.lower_bound})">
+                                    🔥 Retire Offset
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            // Retirements table
+            const retBody = document.getElementById('buyer-retirements-tbody');
+            const rets = data.retirements || [];
+            if (!rets.length) {
+                retBody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: var(--text-muted);">No offset retirements logged.</td></tr>';
+            } else {
+                retBody.innerHTML = rets.map(r => `
+                    <tr>
+                        <td><a href="javascript:void(0)" onclick="viewCertificate('${r.certificate_id}', '${r.beneficiary_name}', ${r.amount}, '${r.offset_reason}')" class="code-pill">${r.certificate_id}</a></td>
+                        <td><strong>${r.beneficiary_name}</strong></td>
+                        <td><strong style="color: var(--accent-green);">${r.amount} t</strong></td>
+                        <td>${r.offset_reason}</td>
+                    </tr>
+                `).join('');
+            }
+        }
+
+        // ── Render Community View ──────────────────────────────────────
+        function renderCommunityView(data) {
+            const feed = document.getElementById('community-public-feed');
+            const reports = data.community_reports || [];
+            if (!reports.length) {
+                feed.innerHTML = '<p style="color: var(--text-muted); font-size: 13px;">No field reports submitted yet.</p>';
+            } else {
+                feed.innerHTML = reports.map(r => `
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                            <strong style="font-size: 13px; color: var(--accent-cyan);">${r.submitter}</strong>
+                            ${renderBadge(r.status)}
+                        </div>
+                        <p style="font-size: 12.5px; color: var(--text-primary); margin-bottom: 6px;">${r.description}</p>
+                        <div style="font-size: 11px; color: var(--text-muted); display: flex; justify-content: space-between;">
+                            <span>Plot: ${r.plot_id}</span>
+                            <span class="code-pill">${r.photo_uri || 'ipfs://Qm7x...'}</span>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // ── UI Helper Functions ────────────────────────────────────────
+        function renderBadge(status) {
+            const s = (status || 'UNKNOWN').toLowerCase().replace(' ', '_');
+            return `<span class="badge ${s}">${status || 'UNKNOWN'}</span>`;
+        }
+
+        function updateServiceBadge(elementId, isOnline) {
+            const el = document.getElementById(elementId);
+            if (!el) return;
+            if (isOnline) {
+                el.className = 'badge active';
+                el.textContent = 'ONLINE';
+            } else {
+                el.className = 'badge frozen';
+                el.textContent = 'OFFLINE';
+            }
+        }
+
+        // ── Action Handlers ────────────────────────────────────────────
+        async function triggerDevAnalysis(anomalyMode) {
+            const ndvi = parseFloat(document.getElementById('dev-ndvi-slider').value);
+            const outputEl = document.getElementById('dev-mrv-output');
+            outputEl.textContent = 'Running Continuous MRV Multi-Stream Fusion Pipeline...';
+
+            const result = await fetchAPI(`/api/plots/MNG-001/analyze?ndvi=${ndvi}&anomaly_mode=${anomalyMode}`, {
+                method: 'POST'
+            });
+
+            if (result.error) {
+                outputEl.innerHTML = `<span style="color: var(--accent-red);">❌ AI Service Error: ${result.error}</span><br>Ensure AI microservice is active on port 8001.`;
+                return;
+            }
+
+            const c = result.carbon || {};
+            const a = result.anomaly || {};
+            const m = result.mrv || {};
+
+            lastEstimatedCO2 = c.carbon_estimate || 42.0;
+            lastEstimatedLower = c.creditable_carbon || 32.1;
+
+            outputEl.innerHTML = `
+[AI Engine] NDVI=${ndvi} | Plot=MNG-001 (280 Ha)
+├── Carbon Estimate:   ${c.carbon_estimate} tCO₂e (±${c.standard_deviation}t)
+├── Conservative Creditable (C_lower): ${c.creditable_carbon} tCO₂e
+├── Anomaly Flag:      ${a.anomaly ? '⚠️ ANOMALY DETECTED' : '✓ Normal'} (Severity: ${a.severity})
+└── Fused MRV Score:   ${m.mrv_confidence}% (${m.eligible ? '✓ MINT ELIGIBLE' : '⚠️ FREEZE ALERT'})
+            `;
+
+            refreshDashboardData();
+        }
+
+        async function mintCurrentEstimate() {
+            const btn = document.getElementById('btn-mint-credit');
+            btn.disabled = true;
+            btn.textContent = 'Minting Living Credit Batch...';
+
+            const res = await fetchAPI('/api/credits/mint', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    plot_id: 'MNG-001',
+                    quantity: lastEstimatedCO2,
+                    lower_bound: lastEstimatedLower,
+                    mrv_score: 91.5,
+                    evidence_hash: `0xQmSentinel${Date.now().toString(16)}`
+                })
+            });
+
+            btn.disabled = false;
+            btn.textContent = '🌱 Mint Verified Living Credit Batch';
+
+            if (res.error) {
+                alert('Mint failed: ' + res.error);
+            } else {
+                alert(`✅ Successfully minted Living Carbon Credit Batch #${res.credit.id} with ${res.credit.lower_bound} tCO2e!`);
+                refreshDashboardData();
+            }
+        }
+
+        async function setCreditStatus(id, status) {
+            await fetchAPI(`/api/credits/${id}/status`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ status })
+            });
+            refreshDashboardData();
+        }
+
+        async function setReportStatus(id, status) {
+            await fetchAPI(`/api/community-reports/${id}/status`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ status })
+            });
+            refreshDashboardData();
+        }
+
+        // ── Modal Handlers ─────────────────────────────────────────────
+        function openModal(id) { document.getElementById(id).classList.add('active'); }
+        function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+
+        function openRetireModal(creditId, availableAmount) {
+            document.getElementById('retire-credit-id').value = creditId;
+            document.getElementById('retire-credit-display').value = `Batch #${creditId} (${availableAmount} t available)`;
+            document.getElementById('retire-amount').max = availableAmount;
+            openModal('modal-retire');
+        }
+
+        function openTransferModal(creditId, availableAmount) {
+            document.getElementById('transfer-credit-id').value = creditId;
+            document.getElementById('transfer-credit-display').value = `Batch #${creditId} (${availableAmount} t available)`;
+            document.getElementById('transfer-amount').max = availableAmount;
+            openModal('modal-transfer');
+        }
+
+        function openThresholdModal() { openModal('modal-threshold'); }
+        function openNewPlotModal() { openModal('modal-new-plot'); }
+
+        function viewCertificate(certId, beneficiary, amount, reason) {
+            document.getElementById('cert-id-text').textContent = certId;
+            document.getElementById('cert-beneficiary-text').textContent = beneficiary;
+            document.getElementById('cert-amount-text').textContent = `${amount} tCO₂e`;
+            document.getElementById('cert-reason-text').textContent = reason;
+            openModal('modal-cert');
+        }
+
+        async function handleRetireSubmit(e) {
+            e.preventDefault();
+            const creditId = document.getElementById('retire-credit-id').value;
+            const amount = parseFloat(document.getElementById('retire-amount').value);
+            const beneficiary = document.getElementById('retire-beneficiary').value;
+            const reason = document.getElementById('retire-reason').value;
+
+            const res = await fetchAPI(`/api/credits/${creditId}/retire`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    amount,
+                    beneficiary_name: beneficiary,
+                    offset_reason: reason
+                })
+            });
+
+            closeModal('modal-retire');
+            if (res.error) {
+                alert('Retirement Error: ' + res.error);
+            } else {
+                viewCertificate(res.certificate_id, beneficiary, amount, reason);
+                refreshDashboardData();
+            }
+        }
+
+        async function handleTransferSubmit(e) {
+            e.preventDefault();
+            const creditId = document.getElementById('transfer-credit-id').value;
+            const recipient = document.getElementById('transfer-recipient').value;
+            const amount = parseFloat(document.getElementById('transfer-amount').value);
+
+            const res = await fetchAPI(`/api/credits/${creditId}/transfer`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    recipient_address: recipient,
+                    amount
+                })
+            });
+
+            closeModal('modal-transfer');
+            if (res.error) {
+                alert('Transfer Blocked by Smart Contract: ' + res.error);
+            } else {
+                alert(`✅ On-Chain Transfer Succeeded!\nTx Hash: ${res.tx_hash}\nTransferred: ${amount} tCO2e to ${recipient}`);
+                refreshDashboardData();
+            }
+        }
+
+        async function handleThresholdSubmit(e) {
+            e.preventDefault();
+            const mint = parseFloat(document.getElementById('cfg-mint').value);
+            const freeze = parseFloat(document.getElementById('cfg-freeze').value);
+
+            await fetchAPI('/api/config/thresholds', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ mint_threshold: mint, freeze_threshold: freeze })
+            });
+
+            closeModal('modal-threshold');
+            refreshDashboardData();
+        }
+
+        async function handleNewPlotSubmit(e) {
+            e.preventDefault();
+            const plotId = document.getElementById('new-plot-id').value;
+            const name = document.getElementById('new-plot-name').value;
+            const lat = parseFloat(document.getElementById('new-plot-lat').value);
+            const lng = parseFloat(document.getElementById('new-plot-lng').value);
+            const area = parseFloat(document.getElementById('new-plot-area').value);
+            const ndvi = parseFloat(document.getElementById('new-plot-ndvi').value);
+            const eco = document.getElementById('new-plot-eco').value;
+
+            await fetchAPI('/api/plots', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    id: plotId,
+                    name: name,
+                    lat: lat,
+                    lng: lng,
+                    area_ha: area,
+                    baseline_ndvi: ndvi,
+                    ecosystem_type: eco
+                })
+            });
+
+            closeModal('modal-new-plot');
+            refreshDashboardData();
+        }
+
+        async function handleReportSubmit(e) {
+            e.preventDefault();
+            const submitter = document.getElementById('rep-name').value;
+            const plotId = document.getElementById('rep-plot-id').value;
+            const category = document.getElementById('rep-category').value;
+            const desc = document.getElementById('rep-desc').value;
+
+            const res = await fetchAPI('/api/community-reports', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    plot_id: plotId,
+                    submitter: submitter,
+                    description: `[${category.toUpperCase()}] ${desc}`,
+                    photo_uri: `ipfs://QmFieldPhoto${Date.now().toString(16)}`
+                })
+            });
+
+            if (res.error) {
+                alert('Submission Error: ' + res.error);
+            } else {
+                alert('✅ Community Ground-Truth Field Report successfully filed and anchored on-chain!');
+                document.getElementById('community-report-form').reset();
+                refreshDashboardData();
+            }
+        }
+
+        // ── 6-Scene Live Demo Script Runner ─────────────────────────────
+        async function runDemoScene(sceneNum) {
+            switch(sceneNum) {
+                case 1:
+                    switchRole('project_owner');
+                    document.getElementById('dev-ndvi-slider').value = 0.42;
+                    document.getElementById('dev-slider-val').textContent = '0.42';
+                    await triggerDevAnalysis(false);
+                    alert('🎬 [SCENE 1: HEALTHY BASELINE]\nMNG-001 Pichavaram (280 Ha) baseline NDVI 0.42. Verra VM0007 Conservative Creditable estimate: 32.1 tCO2e.');
+                    break;
+                case 2:
+                    switchRole('project_owner');
+                    alert('🎬 [SCENE 2: REAL-TIME IOT STREAM]\nGround node reporting: Salinity 14 ppt, pH 7.8, Temp 28.5°C, Sensor Trust Score 96/100.');
+                    break;
+                case 3:
+                    switchRole('community');
+                    document.getElementById('rep-name').value = 'M. Selvam (Field Watcher)';
+                    document.getElementById('rep-desc').value = 'Tidal creek barrier clearing observed on North sector; evidence photo uploaded.';
+                    alert('🎬 [SCENE 3: COMMUNITY FIELD ALERT]\nLocal fisherfolk union files geotagged alert with photo CID proof.');
+                    break;
+                case 4:
+                    switchRole('project_owner');
+                    document.getElementById('dev-ndvi-slider').value = 0.18;
+                    document.getElementById('dev-slider-val').textContent = '0.18';
+                    await triggerDevAnalysis(true);
+                    alert('🎬 [SCENE 4: SATELLITE DEGRADATION DETECTED]\nSentinel-2 NDVI drops 57% (0.42 -> 0.18). AI Anomaly Severity spikes to 1.0! MRV score drops below freeze threshold.');
+                    break;
+                case 5:
+                    switchRole('buyer');
+                    // Freeze first credit batch
+                    if (latestDashboardData?.credits?.length) {
+                        await setCreditStatus(latestDashboardData.credits[0].id, 'FROZEN');
+                    }
+                    alert('🎬 [SCENE 5: SMART CONTRACT FREEZE TRIGGERED]\nLiving Carbon Credit status automatically flips to FROZEN. Transfers and trading are blocked on-chain!');
+                    break;
+                case 6:
+                    switchRole('admin');
+                    if (latestDashboardData?.credits?.length) {
+                        await setCreditStatus(latestDashboardData.credits[0].id, 'REVERIFIED');
+                    }
+                    alert('🎬 [SCENE 6: REVERIFICATION & OFFSET RETIREMENT]\nGround inspection confirms restoration. Auditor clears anomaly -> Status updated to REVERIFIED. Buyer retires corporate offset!');
+                    switchRole('buyer');
+                    break;
+            }
+        }
+
+        // ── Auto Initialization ────────────────────────────────────────
+        document.addEventListener('DOMContentLoaded', () => {
+            refreshDashboardData();
+            // Polling sync every 8 seconds
+            setInterval(refreshDashboardData, 8000);
+        });
+    </script>
+</body>
+</html>

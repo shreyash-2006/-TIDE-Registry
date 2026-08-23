@@ -1,0 +1,146 @@
+# Phase 2 — Digital Twin + GIS Module Walkthrough
+### Blue Carbon MRV — MNG-001 (Pichavaram) — Session 2
+
+## What Was Built
+
+A self-contained `digital-twin/` Python service (FastAPI, port 8002) implementing
+the three core capabilities from the work plan:
+
+1. **Digital Carbon Twin** — time-versioned state per plot with full snapshot history
+2. **Satellite change detection** — NDVI before/after, pct_change, significance flag
+3. **Map visualization** — Folium/Leaflet interactive map with health-coded boundary
+
+---
+
+## Files Created
+
+```
+digital-twin/
+├── data/
+│   └── pichavaram_boundary.geojson   NEW: plot polygon (real bbox + coastline approx)
+├── gis/
+│   ├── __init__.py
+│   ├── boundary.py                   NEW: load/validate/centroid/area utilities
+│   └── extent_history.py             NEW: GMW mangrove area 2000-2020 (offline + live)
+├── satellite/
+│   ├── __init__.py
+│   ├── composites.py                 NEW: Sentinel-2 NDVI composites (GEE + offline fallback)
+│   └── change_detection.py           NEW: pct_change + significance logic
+├── temporal/
+│   ├── __init__.py
+│   ├── snapshot.py                   NEW: TwinSnapshot model + thread-safe history store
+│   └── scoring.py                    NEW: health_score(), permanence_score(), compute_volatility()
+├── map/
+│   ├── __init__.py
+│   └── render.py                     NEW: Folium map builder (boundary + NDVI overlays + popup)
+├── config.py                         NEW: shared constants (mirrors ai/config.py)
+├── api.py                            NEW: FastAPI app, 9 endpoints on port 8002
+├── seed.py                           NEW: 4 demo scenario snapshots (healthy→degraded→frozen→restored)
+├── requirements.txt
+└── test_api.py                       NEW: 55/55 integration tests passing
+```
+
+---
+
+## Test Results
+
+```
+[1. Health / liveness]         4/4  PASS
+[2. Boundary GeoJSON]          5/5  PASS
+[3. Current state]             6/6  PASS
+[4. Snapshot history]          6/6  PASS
+[5. POST update]               6/6  PASS
+[6. Satellite change]          8/8  PASS
+[7. Scores endpoint]           6/6  PASS
+[8. Extent history]            6/6  PASS
+[9. Map HTML endpoint]         5/5  PASS
+[10. 404 for unknown plot]     3/3  PASS
+
+Result: 55/55 checks passed -- All systems go!
+```
+
+---
+
+## API Contract (stable, published to team)
+
+| Method | Path | Purpose |
+|---|---|---|
+| `GET` | `/api/twin/health` | Liveness + config echo |
+| `GET` | `/api/twin/boundary` | Raw GeoJSON for M6/Leaflet |
+| `GET` | `/api/twin/{plot_id}/current` | Latest TwinSnapshot |
+| `GET` | `/api/twin/{plot_id}/history` | Full snapshot list (oldest first) |
+| `POST` | `/api/twin/{plot_id}/update` | Append new snapshot (auto-computes scores) |
+| `GET` | `/api/twin/{plot_id}/satellite-change` | NDVI before/after + pct_change |
+| `GET` | `/api/twin/{plot_id}/scores` | Live health + permanence scores |
+| `GET` | `/api/twin/{plot_id}/map` | Folium HTML map page |
+| `GET` | `/api/twin/{plot_id}/extent-history` | GMW area over time |
+| `GET` | `/docs` | Swagger UI |
+
+---
+
+## Demo Scenarios (seeded at startup)
+
+| Snapshot | Days Ago | NDVI | Health | Credit | Event |
+|---|---|---|---|---|---|
+| Baseline healthy | −90 | 0.42 | 100.0 | ACTIVE | routine_update |
+| Pre-cyclone stress | −30 | 0.35 | 87.1 | AT-RISK | satellite_alert |
+| Post-cyclone degraded | −7 | 0.19 | 15.0 | FROZEN | satellite_alert |
+| Post-restoration | today | 0.31 | 73.6 | UNDER_REVIEW | reverification |
+
+The health score arc (100 → 87 → 15 → 74) visually tells the story on the
+dashboard timeline without any extra configuration.
+
+---
+
+## Scoring Formulas (from work plan §4)
+
+```python
+# Health score
+ndvi_ratio = min(1.0, ndvi_current / ndvi_baseline)
+health = max(0, (ndvi_ratio * 100) - iot_penalty - (ai_severity * 30))
+
+# Permanence score
+volatility = std_dev(last_5_health_scores) / 100
+penalty = volatility * 20 + (15 if credit in FROZEN/UNDER_REVIEW else 0)
+permanence = max(0, health - penalty)
+```
+
+Satellite significance threshold: **|pct_change| > 15%** (coordinated with M1).
+
+---
+
+## How to Run
+
+```bash
+cd digital-twin/
+
+# Start service:
+uvicorn api:app --reload --port 8002
+
+# Validate:
+python test_api.py
+
+# Seed can be re-run standalone:
+python seed.py
+```
+
+---
+
+## Integration Notes for Team
+
+### For M5 (Backend)
+- Call `POST /api/twin/{plot_id}/update` with `iot_anomaly_penalty` + `ai_anomaly_severity` from M1/M3
+- Scores are auto-computed on every update — no need to call the scores endpoint separately
+- `TwinSnapshot` schema is Postgres-compatible: M5 can own persistence using the same Pydantic fields as columns
+
+### For M6 (Frontend)
+- **Option A (iframe):** `GET /api/twin/{plot_id}/map` → self-contained Leaflet HTML
+- **Option B (React/Leaflet):** `GET /api/twin/boundary` for GeoJSON + `GET /current` for snapshot JSON → render natively in Leaflet.js
+
+### For M1 (AI)
+- The satellite significance threshold (15%) matches M1's anomaly detector — coordinate before demo to confirm both modules flag the same events
+
+### Backend Merge Path
+Both `ai/` and `digital-twin/` are self-contained FastAPI apps.
+When merging: mount both routers under a single FastAPI app using `app.include_router()`.
+No schema changes required.
