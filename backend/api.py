@@ -50,6 +50,7 @@ from config import (
 )
 import database as db
 import services as svc
+import thingspeak_service as ts
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -600,6 +601,18 @@ def dashboard_data():
             "thresholds": {"mint": mint_thr, "freeze": freeze_thr},
         },
     }
+
+
+# ─────────────────────────────────────────────────────────────────────
+# THINGSPEAK IOT API
+# ─────────────────────────────────────────────────────────────────────
+
+@app.get("/api/thingspeak", tags=["IoT"])
+def get_thingspeak_data(results: int = 50):
+    """
+    Extract and clean live IoT feeds from ThingSpeak Channel 3465169.
+    """
+    return ts.get_thingspeak_telemetry(results_count=results)
 
 
 # ─────────────────────────────────────────────────────────────────────

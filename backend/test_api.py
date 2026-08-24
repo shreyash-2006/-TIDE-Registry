@@ -277,7 +277,20 @@ else:
     skip("Has MRV result", "AI service not running")
     skip("Carbon estimate > 0", "AI service not running")
     skip("Creditable carbon lower bound > 0", "AI service not running")
-    skip("Anomaly analysis", "AI service not running")
+# ─────────────────────────────────────────────────────────────────────
+# 9. ThingSpeak IoT Extraction
+# ─────────────────────────────────────────────────────────────────────
+print("\n[9. ThingSpeak IoT Extraction]")
+try:
+    r = requests.get(f"{BASE}/api/thingspeak?results=5", timeout=10)
+    data = r.json()
+    check("Status 200", r.status_code == 200)
+    check("Status ok", data.get("status") == "ok")
+    check("Channel ID 3465169", str(data.get("channel", {}).get("id")) == "3465169")
+    check("Has latest telemetry", "latest" in data)
+    check("Has extracted feeds", isinstance(data.get("feeds"), list))
+except Exception as e:
+    check("ThingSpeak API extraction", False, str(e))
 
 
 # ─────────────────────────────────────────────────────────────────────
