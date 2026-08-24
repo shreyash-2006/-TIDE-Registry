@@ -6,42 +6,42 @@
     <title>TIDE — Trusted Intelligent Digital Ecosystem Registry</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        /* ── Modern Design System & CSS Variables ──────────────────────── */
+        /* ── Modern Design System & CSS Variables — Light Theme ────────── */
         :root {
-            --bg-primary: #0a0d14;
-            --bg-secondary: #111726;
-            --bg-card: rgba(18, 26, 43, 0.75);
-            --bg-card-hover: rgba(26, 37, 60, 0.85);
-            --bg-glass: rgba(18, 26, 43, 0.6);
-            --border-color: rgba(255, 255, 255, 0.08);
-            --border-focus: #00d2ff;
+            --bg-primary: #f0f4f8;
+            --bg-secondary: #ffffff;
+            --bg-card: rgba(255, 255, 255, 0.95);
+            --bg-card-hover: rgba(248, 250, 255, 1);
+            --bg-glass: rgba(255, 255, 255, 0.75);
+            --border-color: rgba(0, 0, 0, 0.08);
+            --border-focus: #0284c7;
             
-            --text-primary: #f0f6fc;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
             
-            --accent-cyan: #00f2fe;
-            --accent-blue: #4facfe;
-            --accent-green: #10b981;
-            --accent-amber: #f59e0b;
-            --accent-red: #ef4444;
-            --accent-purple: #8b5cf6;
-            --accent-teal: #14b8a6;
+            --accent-cyan: #0284c7;
+            --accent-blue: #2563eb;
+            --accent-green: #059669;
+            --accent-amber: #d97706;
+            --accent-red: #dc2626;
+            --accent-purple: #7c3aed;
+            --accent-teal: #0d9488;
             
-            --gradient-ocean: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-            --gradient-emerald: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            --gradient-amber: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            --gradient-crimson: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
-            --gradient-purple: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
-            --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+            --gradient-ocean: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+            --gradient-emerald: linear-gradient(135deg, #059669 0%, #047857 100%);
+            --gradient-amber: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+            --gradient-crimson: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            --gradient-purple: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+            --gradient-card: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(248,250,255,0.9) 100%);
             
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-            --shadow-glow-cyan: 0 0 24px rgba(0, 242, 254, 0.25);
-            --shadow-glow-green: 0 0 24px rgba(16, 185, 129, 0.25);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --shadow-glow-cyan: 0 0 20px rgba(2, 132, 199, 0.18);
+            --shadow-glow-green: 0 0 20px rgba(5, 150, 105, 0.18);
             --radius-sm: 8px;
             --radius-md: 14px;
             --radius-lg: 20px;
@@ -50,7 +50,7 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
-            font-family: Arial, Helvetica, sans-serif, -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', Arial, Helvetica, sans-serif, -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.5;
@@ -59,15 +59,15 @@
             flex-direction: column;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 85% 85%, rgba(79, 172, 254, 0.06) 0%, transparent 45%),
-                radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.04) 0%, transparent 50%);
+                radial-gradient(circle at 10% 10%, rgba(2, 132, 199, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 90% 85%, rgba(37, 99, 235, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(5, 150, 105, 0.03) 0%, transparent 50%);
             background-attachment: fixed;
         }
 
         /* ── Top Navigation Bar ────────────────────────────────────────── */
         .navbar {
-            background: rgba(10, 13, 20, 0.85);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-color);
             position: sticky;
@@ -78,6 +78,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 16px;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.06);
         }
         
         .brand {
@@ -119,7 +120,7 @@
             display: flex;
             align-items: center;
             gap: 6px;
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(0, 0, 0, 0.03);
             border: 1px solid var(--border-color);
             padding: 4px;
             border-radius: 12px;
@@ -143,14 +144,14 @@
 
         .nav-tab:hover {
             color: var(--text-primary);
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.05);
         }
 
         .nav-tab.active {
             background: var(--gradient-ocean);
-            color: #06111e;
+            color: #ffffff;
             font-weight: 600;
-            box-shadow: 0 2px 10px rgba(0, 242, 254, 0.3);
+            box-shadow: 0 2px 10px rgba(2, 132, 199, 0.3);
         }
 
         .nav-actions {
@@ -167,7 +168,7 @@
             border-radius: 20px;
             font-size: 12px;
             font-weight: 500;
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(0, 0, 0, 0.04);
             border: 1px solid var(--border-color);
         }
 
@@ -222,9 +223,9 @@
             font-weight: 600;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            background: rgba(0, 242, 254, 0.1);
+            background: rgba(2, 132, 199, 0.1);
             color: var(--accent-cyan);
-            border: 1px solid rgba(0, 242, 254, 0.25);
+            border: 1px solid rgba(2, 132, 199, 0.25);
             margin-bottom: 16px;
         }
 
@@ -302,7 +303,7 @@
             justify-content: center;
             font-size: 26px;
             margin-bottom: 18px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(2, 132, 199, 0.08);
             border: 1px solid var(--border-color);
         }
 
@@ -471,13 +472,13 @@
 
         td {
             padding: 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             color: var(--text-primary);
             vertical-align: middle;
         }
 
         tr:hover td {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(2, 132, 199, 0.04);
         }
 
         /* ── Badges ────────────────────────────────────────────────────── */
@@ -494,27 +495,27 @@
         }
 
         .badge.active, .badge.verified, .badge.healthy {
-            background: rgba(16, 185, 129, 0.15);
-            color: #34d399;
-            border: 1px solid rgba(16, 185, 129, 0.3);
+            background: rgba(5, 150, 105, 0.12);
+            color: #047857;
+            border: 1px solid rgba(5, 150, 105, 0.3);
         }
 
         .badge.proposed, .badge.pending {
-            background: rgba(0, 242, 254, 0.12);
+            background: rgba(2, 132, 199, 0.1);
             color: var(--accent-cyan);
-            border: 1px solid rgba(0, 242, 254, 0.25);
+            border: 1px solid rgba(2, 132, 199, 0.25);
         }
 
         .badge.frozen, .badge.revoked, .badge.degraded {
-            background: rgba(239, 68, 68, 0.15);
-            color: #f87171;
-            border: 1px solid rgba(239, 68, 68, 0.3);
+            background: rgba(220, 38, 38, 0.1);
+            color: #b91c1c;
+            border: 1px solid rgba(220, 38, 38, 0.25);
         }
 
         .badge.at_risk, .badge.reverified, .badge.investigating {
-            background: rgba(245, 158, 11, 0.15);
-            color: #fbbf24;
-            border: 1px solid rgba(245, 158, 11, 0.3);
+            background: rgba(217, 119, 6, 0.1);
+            color: #b45309;
+            border: 1px solid rgba(217, 119, 6, 0.25);
         }
 
         /* ── Buttons ───────────────────────────────────────────────────── */
@@ -536,30 +537,30 @@
 
         .btn-primary {
             background: var(--gradient-ocean);
-            color: #06111e;
-            box-shadow: 0 4px 14px rgba(0, 242, 254, 0.3);
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
         }
 
         .btn-primary:hover {
-            box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5);
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45);
             transform: translateY(-1px);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.04);
             color: var(--text-primary);
             border-color: var(--border-color);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(2, 132, 199, 0.08);
+            border-color: rgba(2, 132, 199, 0.25);
         }
 
         .btn-danger {
-            background: rgba(239, 68, 68, 0.15);
-            color: #f87171;
-            border-color: rgba(239, 68, 68, 0.3);
+            background: rgba(220, 38, 38, 0.1);
+            color: #b91c1c;
+            border-color: rgba(220, 38, 38, 0.25);
         }
 
         .btn-danger:hover {
@@ -568,9 +569,9 @@
         }
 
         .btn-success {
-            background: rgba(16, 185, 129, 0.15);
-            color: #34d399;
-            border-color: rgba(16, 185, 129, 0.3);
+            background: rgba(5, 150, 105, 0.1);
+            color: #047857;
+            border-color: rgba(5, 150, 105, 0.25);
         }
 
         .btn-success:hover {
@@ -600,8 +601,8 @@
         .form-control {
             width: 100%;
             padding: 10px 14px;
-            background: rgba(10, 13, 20, 0.6);
-            border: 1px solid var(--border-color);
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.12);
             border-radius: 8px;
             color: var(--text-primary);
             font-family: inherit;
@@ -612,7 +613,7 @@
 
         .form-control:focus {
             border-color: var(--border-focus);
-            box-shadow: 0 0 0 2px rgba(0, 242, 254, 0.15);
+            box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15);
         }
 
         textarea.form-control {
@@ -622,8 +623,8 @@
 
         /* ── Demo Runner Bar (Floating / Bottom Action) ────────────────── */
         .demo-bar {
-            background: rgba(17, 23, 38, 0.95);
-            border: 1px solid rgba(0, 242, 254, 0.3);
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(2, 132, 199, 0.2);
             border-radius: var(--radius-md);
             padding: 14px 20px;
             margin-bottom: 24px;
@@ -643,7 +644,7 @@
         }
 
         .scene-btn {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.04);
             border: 1px solid var(--border-color);
             color: var(--text-secondary);
             padding: 6px 12px;
@@ -656,7 +657,7 @@
         .scene-btn:hover {
             color: var(--accent-cyan);
             border-color: var(--accent-cyan);
-            background: rgba(0, 242, 254, 0.08);
+            background: rgba(2, 132, 199, 0.08);
         }
 
         /* ── Modal ─────────────────────────────────────────────────────── */
@@ -666,7 +667,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(15, 23, 42, 0.5);
             backdrop-filter: blur(8px);
             z-index: 1000;
             display: none;
@@ -680,13 +681,13 @@
         }
 
         .modal-content {
-            background: var(--bg-secondary);
+            background: #ffffff;
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
             max-width: 540px;
             width: 100%;
             padding: 28px;
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.18);
             animation: modalPop 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -697,14 +698,14 @@
 
         /* ── Certificate Preview ───────────────────────────────────────── */
         .cert-box {
-            background: linear-gradient(135deg, #0e1e38 0%, #081224 100%);
-            border: 2px solid #00f2fe;
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            border: 2px solid #0284c7;
             border-radius: 12px;
             padding: 24px;
             text-align: center;
             position: relative;
             margin: 16px 0;
-            box-shadow: 0 0 30px rgba(0, 242, 254, 0.2);
+            box-shadow: 0 0 24px rgba(2, 132, 199, 0.15);
         }
 
         .cert-seal {
@@ -724,7 +725,7 @@
             font-size: 11.5px;
             padding: 2px 6px;
             border-radius: 4px;
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(2, 132, 199, 0.1);
             color: var(--accent-cyan);
         }
 
@@ -733,9 +734,136 @@
             .grid-2 { grid-template-columns: 1fr; }
             .nav-roles { display: none; }
         }
+
+        /* ── Login Modal ────────────────────────────────────────────────── */
+        .login-modal-backdrop {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.55);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .login-modal-backdrop.active { display: flex; }
+
+        .login-modal {
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 22px;
+            max-width: 420px;
+            width: 100%;
+            padding: 36px 32px 32px;
+            box-shadow: 0 24px 72px rgba(0,0,0,0.18);
+            animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .login-modal-icon {
+            width: 62px;
+            height: 62px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 18px;
+            background: var(--gradient-ocean);
+            box-shadow: var(--shadow-glow-cyan);
+        }
+
+        .login-modal h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 4px;
+        }
+
+        .login-modal .login-subtitle {
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .login-credentials-hint {
+            background: rgba(2, 132, 199, 0.06);
+            border: 1px solid rgba(2, 132, 199, 0.15);
+            border-radius: 10px;
+            padding: 10px 14px;
+            font-size: 12.5px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .login-error {
+            background: rgba(220, 38, 38, 0.08);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            border-radius: 8px;
+            padding: 9px 12px;
+            font-size: 12.5px;
+            color: #b91c1c;
+            margin-bottom: 14px;
+            display: none;
+        }
+        .login-error.visible { display: block; }
+
+        .login-close-btn {
+            position: absolute;
+            top: 16px; right: 16px;
+            background: rgba(0,0,0,0.05);
+            border: none;
+            border-radius: 8px;
+            width: 32px; height: 32px;
+            font-size: 16px;
+            cursor: pointer;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .login-close-btn:hover { background: rgba(0,0,0,0.1); color: var(--text-primary); }
     </style>
 </head>
 <body>
+
+    <!-- ── Login Modal ──────────────────────────────────────────────── -->
+    <div class="login-modal-backdrop" id="loginModalBackdrop">
+        <div class="login-modal" id="loginModal">
+            <button class="login-close-btn" onclick="closeLoginModal()" title="Cancel">✕</button>
+            <div class="login-modal-icon" id="loginModalIcon">🔐</div>
+            <h2 id="loginModalTitle">Portal Login</h2>
+            <p class="login-subtitle" id="loginModalSubtitle">Enter your credentials to access this portal</p>
+
+            <div class="login-credentials-hint" id="loginCredentialsHint">
+                <span>💡</span>
+                <span id="loginHintText">Use the credentials for your role.</span>
+            </div>
+
+            <div class="login-error" id="loginError">⚠️ Invalid username or password. Please try again.</div>
+
+            <form id="loginForm" onsubmit="submitLogin(event)">
+                <div class="form-group">
+                    <label for="loginUsername">Username</label>
+                    <input type="text" class="form-control" id="loginUsername" placeholder="Enter username" autocomplete="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" autocomplete="current-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 6px; padding: 12px;" id="loginSubmitBtn">
+                    Sign In →
+                </button>
+            </form>
+        </div>
+    </div>
 
     <!-- ── Top Navigation Bar ────────────────────────────────────────── -->
     <header class="navbar">
@@ -966,7 +1094,7 @@
                                 <span>Mint Threshold (Score ≥)</span>
                                 <strong id="admin-thresh-mint" style="color: var(--accent-green);">85.0%</strong>
                             </div>
-                            <div style="background: rgba(255,255,255,0.06); height: 6px; border-radius: 3px;">
+                            <div style="background: rgba(0,0,0,0.08); height: 6px; border-radius: 3px;">
                                 <div style="background: var(--accent-green); height: 100%; width: 85%; border-radius: 3px;"></div>
                             </div>
                         </div>
@@ -975,7 +1103,7 @@
                                 <span>Automatic Freeze Trigger (Score <)</span>
                                 <strong id="admin-thresh-freeze" style="color: var(--accent-red);">60.0%</strong>
                             </div>
-                            <div style="background: rgba(255,255,255,0.06); height: 6px; border-radius: 3px;">
+                            <div style="background: rgba(0,0,0,0.08); height: 6px; border-radius: 3px;">
                                 <div style="background: var(--accent-red); height: 100%; width: 60%; border-radius: 3px;"></div>
                             </div>
                         </div>
@@ -1699,8 +1827,78 @@
             }
         }
 
+        // ── Login Credentials Store (per role) ────────────────────────
+        const ROLE_CREDENTIALS = {
+            'admin': { username: 'admin', password: 'admin123', icon: '🏛️', title: 'Government / Admin Portal', hint: 'Username: admin  •  Password: admin123' },
+            'project_owner': { username: 'developer', password: 'dev123', icon: '🌿', title: 'Project Developer Portal', hint: 'Username: developer  •  Password: dev123' },
+            'buyer': { username: 'buyer', password: 'buyer123', icon: '💼', title: 'Buyer Marketplace Portal', hint: 'Username: buyer  •  Password: buyer123' },
+            'community': { username: 'community', password: 'comm123', icon: '👥', title: 'Community Reporter Portal', hint: 'Username: community  •  Password: comm123' }
+        };
+
+        let pendingLoginRole = null;
+        const loggedInRoles = new Set(JSON.parse(sessionStorage.getItem('tide_logged_in') || '[]'));
+
+        function saveLoggedInRoles() {
+            sessionStorage.setItem('tide_logged_in', JSON.stringify([...loggedInRoles]));
+        }
+
+        function showLoginModal(role) {
+            const cred = ROLE_CREDENTIALS[role];
+            if (!cred) return;
+            pendingLoginRole = role;
+            document.getElementById('loginModalIcon').textContent = cred.icon;
+            document.getElementById('loginModalTitle').textContent = cred.title;
+            document.getElementById('loginModalSubtitle').textContent = 'Sign in to access this portal';
+            document.getElementById('loginHintText').textContent = cred.hint;
+            document.getElementById('loginUsername').value = '';
+            document.getElementById('loginPassword').value = '';
+            document.getElementById('loginError').classList.remove('visible');
+            document.getElementById('loginModalBackdrop').classList.add('active');
+            setTimeout(() => document.getElementById('loginUsername').focus(), 100);
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModalBackdrop').classList.remove('active');
+            pendingLoginRole = null;
+        }
+
+        function submitLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('loginUsername').value.trim();
+            const password = document.getElementById('loginPassword').value;
+            const cred = ROLE_CREDENTIALS[pendingLoginRole];
+
+            if (cred && username === cred.username && password === cred.password) {
+                loggedInRoles.add(pendingLoginRole);
+                saveLoggedInRoles();
+                closeLoginModal();
+                _doSwitchRole(pendingLoginRole);
+            } else {
+                document.getElementById('loginError').classList.add('visible');
+                document.getElementById('loginPassword').value = '';
+                document.getElementById('loginPassword').focus();
+            }
+        }
+
+        // Close modal on backdrop click
+        document.getElementById('loginModalBackdrop').addEventListener('click', function(e) {
+            if (e.target === this) closeLoginModal();
+        });
+
         // ── Role & View Switcher ───────────────────────────────────────
         function switchRole(role) {
+            // Portal select and already-logged-in roles go through directly
+            if (role === 'portal_select' || loggedInRoles.has(role)) {
+                _doSwitchRole(role);
+            } else if (ROLE_CREDENTIALS[role]) {
+                // Requires login
+                showLoginModal(role);
+            } else {
+                _doSwitchRole(role);
+            }
+        }
+
+        function _doSwitchRole(role) {
             currentRole = role;
             
             // Update tabs
@@ -2501,8 +2699,8 @@
                             {
                                 label: 'Temperature (°C)',
                                 data: tempSeries,
-                                borderColor: '#f59e0b',
-                                backgroundColor: 'rgba(245, 158, 11, 0.15)',
+                                borderColor: '#d97706',
+                                backgroundColor: 'rgba(217, 119, 6, 0.1)',
                                 fill: true,
                                 tension: 0.35,
                                 borderWidth: 2.5,
@@ -2511,8 +2709,8 @@
                             {
                                 label: 'Humidity (%)',
                                 data: humSeries,
-                                borderColor: '#00f2fe',
-                                backgroundColor: 'rgba(0, 242, 254, 0.1)',
+                                borderColor: '#0284c7',
+                                backgroundColor: 'rgba(2, 132, 199, 0.08)',
                                 fill: true,
                                 tension: 0.35,
                                 borderWidth: 2,
@@ -2521,8 +2719,8 @@
                             {
                                 label: 'Soil Moisture (%)',
                                 data: moistSeries,
-                                borderColor: '#10b981',
-                                backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                                borderColor: '#059669',
+                                backgroundColor: 'rgba(5, 150, 105, 0.08)',
                                 fill: true,
                                 tension: 0.35,
                                 borderWidth: 2,
@@ -2540,26 +2738,26 @@
                         plugins: {
                             legend: {
                                 labels: {
-                                    color: '#94a3b8',
+                                    color: '#475569',
                                     font: { family: 'JetBrains Mono', size: 11 }
                                 }
                             },
                             tooltip: {
-                                backgroundColor: '#111726',
-                                titleColor: '#00f2fe',
-                                bodyColor: '#f0f6fc',
-                                borderColor: 'rgba(255, 255, 255, 0.1)',
+                                backgroundColor: '#ffffff',
+                                titleColor: '#0284c7',
+                                bodyColor: '#0f172a',
+                                borderColor: 'rgba(0, 0, 0, 0.1)',
                                 borderWidth: 1
                             }
                         },
                         scales: {
                             x: {
-                                grid: { color: 'rgba(255, 255, 255, 0.04)' },
+                                grid: { color: 'rgba(0, 0, 0, 0.05)' },
                                 ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 10 } }
                             },
                             y: {
-                                grid: { color: 'rgba(255, 255, 255, 0.06)' },
-                                ticks: { color: '#94a3b8', font: { family: 'JetBrains Mono', size: 10 } }
+                                grid: { color: 'rgba(0, 0, 0, 0.06)' },
+                                ticks: { color: '#475569', font: { family: 'JetBrains Mono', size: 10 } }
                             }
                         }
                     }
