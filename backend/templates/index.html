@@ -877,7 +877,7 @@
 
         <nav class="nav-roles">
             <button class="nav-tab active" id="tab-portal_select" onclick="switchRole('portal_select')">
-                <span>🔀</span> Role Switcher
+                <span>🏠</span> Home
             </button>
             <button class="nav-tab" id="tab-admin" onclick="switchRole('admin')">
                 <span>🏛️</span> Admin
@@ -1867,12 +1867,13 @@
             const username = document.getElementById('loginUsername').value.trim();
             const password = document.getElementById('loginPassword').value;
             const cred = ROLE_CREDENTIALS[pendingLoginRole];
+            const roleToLoad = pendingLoginRole; // capture before closeLoginModal clears it
 
             if (cred && username === cred.username && password === cred.password) {
-                loggedInRoles.add(pendingLoginRole);
+                loggedInRoles.add(roleToLoad);
                 saveLoggedInRoles();
                 closeLoginModal();
-                _doSwitchRole(pendingLoginRole);
+                _doSwitchRole(roleToLoad);
             } else {
                 document.getElementById('loginError').classList.add('visible');
                 document.getElementById('loginPassword').value = '';
